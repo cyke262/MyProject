@@ -1,0 +1,38 @@
+digraph "classes" {
+rankdir=BT;
+charset="utf-8";
+edge [arrowhead="none"];
+
+"AddPaList" [color="black", fontcolor="black", label="{AddPaList|id\lid_label0-9 : Label\linput_id0-9 : Entry\lokk_button : Button\lroot : Tk\l|_query()\l_gui_arrang()\l}", shape="record", style="solid"];
+"Admin" [color="black", fontcolor="black", label="{Admin|id\lall_doc : Button\lall_med : Button\ldoc_button : Button\lid\lmed_button : Button\lroot : Tk\l|_intoDoctorQuery()\l_intoMedicine()\l_intoalldoc()\l_intoallmed\l_gui_arrang()\l}", shape="record", style="solid"];
+"AllDoctor" [color="black", fontcolor="black", label="{AllDoctor|box : Treeview\lroot : Tk\lscrollbar : Scrollbar\l|_get()\l}", shape="record", style="solid"];
+"AllMedicine" [color="black", fontcolor="black", label="{AllMedicine|box : Treeview\lroot : Tk\lscrollbar : Scrollbar\l|_get()\l}", shape="record", style="solid"];
+"GetPalist" [color="black", fontcolor="black", label="{GetPalist|box : Treeview\lpid\lroot : Tk\lscrollbar : Scrollbar\l|_get()\l}", shape="record", style="solid"];
+"Login" [color="black", fontcolor="black", label="{Login|input_account : Entry\linput_password : Entry\llabel_account : Label\llabel_password : Label\llogin_button : Button\lroot : Tk\l|backstage_interface(event)\l_gui_arrang()\l}", shape="record", style="solid"];
+"Menu" [color="blue", fontcolor="blue", label="{Menu|main_menu : Menu\lreg_menu : Menu\lname:str\lid\ladmin:Bool\ladd_pa_list_button : Button\ladmin_button : Button\lquery_pa_list_button : Button\lquery_patient_button : Button\lrecord_patient_button : Button\lanamnesis_button : Button\llabel_information : Label\lroot : Tk\l|_information_get()\l_intoRecordPatient()\l_intoQueryPatient()\l_intoQueryPaList()\l_intoAddPaList()\l_intoAdmin()\l_intoAnamnesis()\l_changeReg()\l_gui_arrang()\l}", shape="record", style="solid"];
+"QueryPaList" [color="black", fontcolor="black", label="{QueryPaList|id_label : Label\linput_id : Entry\lokk_button : Button\lroot : Tk\l|_query()\l_gui_arrang()\l}", shape="record", style="solid"];
+"QueryPatient" [color="black", fontcolor="black", label="{QueryPatient|content : Label\lid_label : Label\linput_id : Entry\lokk_button : Button\lroot : Tk\ltitle : Label\l|_query()\l_gui_arrang()\l}", shape="record", style="solid"];
+"RecordPatient" [color="black", fontcolor="black", label="{RecordPatient|birthdate_label : Label\lcmb : Combobox\linput_birthdate : Entry\linput_name : Entry\lname_label : Label\lokk_button : Button\lroot : Tk\lsex_label : Label\l|_confirm()\l_gui_arrang()\l}", shape="record", style="solid"];
+"doctorAdmin" [color="black", fontcolor="black", label="{doctorAdmin|account : Label\lname : Label\lbirthday : Label\lpwd : Label\lbelong : Label\lsex : Label\linput_account : Entry\linput_name : Entry\linput_birthday : Entry\linput_pwd : Entry\linput_belong : Entry\linput_sex : Entry\lquery : Button\lupdate : Button\linsert : Button\ldelete : Button\l|_Query()\l_Update()\l_Insert()\l_Delete()\l_gui_arrang()\l}", shape="record", style="solid"];
+"medicineAdmin" [color="black", fontcolor="black", label="{medicineAdmin|id : Label\lname : Label\lprice : Label\linput_id : Entry\linput_name : Entry\linput_price : Entry\lquery : Button\lupdate : Button\linsert : Button\ldelete : Button\l|_Query()\l_Update()\l_Insert()\l_Delete()\l_gui_arrang()\l}", shape="record", style="solid"];
+"QueryAnamnesis" [color="black", fontcolor="black", label="{QueryAnamnesis|id_label : Label\linput_id : Entry\lokk_button : Button\lroot : Tk\l|_query()\l_gui_arrang()\l}", shape="record", style="solid"];
+"GetAnamnesis" [color="black", fontcolor="black", label="{GetAnamnesis|box : Treeview\lpid\lroot : Tk\lscrollbar : Scrollbar\l|_get()\l}", shape="record", style="solid"];
+"ToolTip" [color="grey", fontcolor="grey", label="{ToolTip|widget\ltip_window\l|show_tip(tip_text)\lhide_tip()\l}", shape="record", style="solid"];
+
+{ rank=same; "Login"; "ToolTip"};
+
+"create_ToolTip(widget, text)" -> "ToolTip";
+"Menu" -> "Login";
+"Admin" -> "Menu";
+"QueryPatient" -> "Menu";
+"RecordPatient" -> "Menu";
+"QueryPaList" -> "Menu";
+"AddPaList" -> "Menu";
+"QueryAnamnesis" -> "Menu";
+"AllDoctor" -> "Admin";
+"doctorAdmin" -> "Admin";
+"AllMedicine" -> "Admin";
+"medicineAdmin" -> "Admin";
+"GetPalist" -> "QueryPaList";
+"GetAnamnesis" -> "QueryAnamnesis";
+}
